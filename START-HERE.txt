@@ -1,0 +1,38 @@
+BIG COPPITT HALLOWEEN BIKE RIDE - FRESH START
+
+This ZIP has NO enclosing folder. Its top level contains index.html, style.css,
+app.js, netlify.toml, package.json, and netlify/functions/.
+
+A. CREATE A NEW GITHUB REPOSITORY
+1. On GitHub, choose New repository. Pick a NEW unique name (example: bck-halloween-map-2026).
+2. Leave 'Add README' unchecked. Create the repo.
+3. Unzip this file ON YOUR MAC, then open the extracted folder.
+4. On GitHub choose 'uploading an existing file' / Add file > Upload files.
+5. Drag the FILES AND FOLDERS INSIDE the extracted folder, NOT the folder itself and NOT the ZIP.
+6. Commit to main. On GitHub main page, index.html must show next to netlify.toml, and netlify/functions must contain 4 .mjs files.
+
+B. CREATE A NEW NETLIFY PROJECT
+1. In app.netlify.com, choose Add new project > Import an existing project > GitHub.
+2. Select your NEW repository. Branch: main. Base directory: blank.
+3. Build command: blank. Publish directory: . (one period). Functions directory: netlify/functions.
+4. Deploy. After publishing, check the DEPLOY FILE BROWSER ROOT: index.html must appear directly under the site name (no extra folder).
+
+C. ENABLE ORGANIZER CONTROLS
+1. Netlify Project configuration > Environment variables > Add variable.
+2. Key: ADMIN_TOKEN. Value: unique random 32+ character secret, NOT shared with neighbors.
+3. Make it available to Functions; redeploy after adding it.
+4. Your website > Organizer: paste token to show/hide/delete stops and move the park star to the precise start.
+
+D. TEST BEFORE SHARING
+1. Open the Netlify homepage and verify purple/orange theme and visible street map.
+2. Open /api/stops -- it should return JSON including "stops": [], not a 404 or HTML.
+3. Add ONE test Sweet Stop at an address you control; choose pin and submit; check it appears immediately after refresh.
+4. Use Organizer to delete the test stop.
+5. Share ONLY after all tests work.
+
+NOTES
+- New site has separate fresh storage: stops from the old website do NOT transfer.
+- Neighbors' addresses are publicly visible immediately. Tell them not to submit someone else's home without permission.
+- A public no-approval form could receive spam; the organizer can hide and delete stops.
+- Map needs internet to download OpenStreetMap tiles and Leaflet assets.
+- Do not upload just the ZIP file to GitHub. Do not use a Netlify manual static deploy: server functions must deploy through Git integration.
